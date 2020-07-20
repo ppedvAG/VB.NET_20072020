@@ -7,9 +7,17 @@
         Dim eingabe As String = Console.ReadLine()
         Console.WriteLine("Eingabe: " & eingabe)
 
-        Dim eingabeAlsInt As Integer = Integer.Parse(eingabe)
-        Console.WriteLine("Eingabe als Int:" & eingabeAlsInt)
-        Console.WriteLine("Das doppelte ist:" & eingabeAlsInt * 2)
+
+        Try
+
+            Dim eingabeAlsInt As Integer = Integer.Parse(eingabe)
+            Console.WriteLine("Eingabe als Int:" & eingabeAlsInt)
+            Console.WriteLine("Das doppelte ist:" & eingabeAlsInt * 2)
+
+        Catch ex As Exception
+            Console.WriteLine("Eingabe war ungültig")
+        End Try
+
 
 
 
