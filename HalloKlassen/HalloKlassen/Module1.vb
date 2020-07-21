@@ -3,6 +3,8 @@
     Sub Main()
         Console.WriteLine("*** Bier! 🍻 ***")
 
+        Console.WriteLine(Environment.ProcessorCount)
+
         Dim hoepfner As Bier 'deklaration
         hoepfner = New Bier() 'instanzierung
 
@@ -22,10 +24,19 @@
 
         ZeigeBier(hoepfner)
         ZeigeBier(welde)
-        Verwässern(welde, 2)
-        Verwässern(welde)
-        ZeigeBier(welde)
         ZeigeBier(CreateRothaus())
+
+        Dim feierabendBier As New Drink
+        feierabendBier.Inhalt = welde
+        feierabendBier.FüllMenge = 500
+        feierabendBier.Behälter = "Bierglass"
+        feierabendBier.Nachfüllen()
+        feierabendBier.ZeigeStatus()
+        feierabendBier.SchluckNehmen(124)
+        feierabendBier.ZeigeStatus()
+        feierabendBier.SchluckNehmen(624)
+        feierabendBier.ZeigeStatus()
+        Console.WriteLine(feierabendBier.Füllstand)
 
         Console.WriteLine("Ende")
         Console.ReadKey()
