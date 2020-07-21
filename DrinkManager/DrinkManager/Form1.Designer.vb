@@ -45,6 +45,8 @@ Partial Class Form1
         Me.SpeichernToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.BeendenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExcelExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -194,13 +196,13 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BierToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(746, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(746, 28)
         Me.MenuStrip1.TabIndex = 15
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'BierToolStripMenuItem
         '
-        Me.BierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NeuToolStripMenuItem, Me.ToolStripMenuItem1, Me.LadenToolStripMenuItem, Me.SpeichernToolStripMenuItem, Me.ToolStripMenuItem2, Me.BeendenToolStripMenuItem})
+        Me.BierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NeuToolStripMenuItem, Me.ToolStripMenuItem1, Me.LadenToolStripMenuItem, Me.SpeichernToolStripMenuItem, Me.ToolStripMenuItem3, Me.ExcelExportToolStripMenuItem, Me.ToolStripMenuItem2, Me.BeendenToolStripMenuItem})
         Me.BierToolStripMenuItem.Name = "BierToolStripMenuItem"
         Me.BierToolStripMenuItem.Size = New System.Drawing.Size(58, 24)
         Me.BierToolStripMenuItem.Text = "Drink"
@@ -239,6 +241,18 @@ Partial Class Form1
         Me.BeendenToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
         Me.BeendenToolStripMenuItem.Text = "Beenden"
         '
+        'ExcelExportToolStripMenuItem
+        '
+        Me.ExcelExportToolStripMenuItem.Name = "ExcelExportToolStripMenuItem"
+        Me.ExcelExportToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.ExcelExportToolStripMenuItem.Text = "Excel Import"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(224, 26)
+        Me.ToolStripMenuItem3.Text = "Excel Export"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
@@ -260,7 +274,7 @@ Partial Class Form1
         Me.Controls.Add(Me.MenuStrip1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Drink-Manager 5000 v0.2 *** PREMIUM EDITION *** (nur ab 18 Jahre)"
@@ -298,4 +312,6 @@ Partial Class Form1
     Friend WithEvents SpeichernToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
     Friend WithEvents BeendenToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExcelExportToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripMenuItem
 End Class

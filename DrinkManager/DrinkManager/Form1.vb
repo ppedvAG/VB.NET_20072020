@@ -1,4 +1,5 @@
 ﻿Imports HalloKlassen
+Imports SpreadsheetLight
 
 Public Class Form1
 
@@ -47,5 +48,26 @@ Public Class Form1
             End If
         End If
 
+    End Sub
+
+    Private Sub ExcelExportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcelExportToolStripMenuItem.Click
+        Dim sl As New SLDocument("Bier.xlsx")
+        meinDrink.Behälter = sl.GetCellValueAsString("A2")
+        meinDrink.FüllMenge = sl.GetCellValueAsInt32("A3")
+        'meinDrink.Füllstand = sl.GetCellValueAsInt32("A4")
+        ShowMyDrink()
+
+
+    End Sub
+
+    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
+        Dim sl As New SLDocument()
+        sl.SetCellValue("A1", "Bier!!")
+        sl.SetCellValue("A2", meinDrink.Behälter)
+        sl.SetCellValue("A3", meinDrink.FüllMenge)
+        sl.SetCellValue("A4", meinDrink.Füllstand)
+
+        sl.SaveAs("Bier.xlsx")
+        Process.Start("Bier.xlsx")
     End Sub
 End Class
