@@ -113,10 +113,14 @@ Partial Class Form1
         '
         'NumericUpDown1
         '
+        Me.NumericUpDown1.Increment = New Decimal(New Integer() {20, 0, 0, 0})
         Me.NumericUpDown1.Location = New System.Drawing.Point(6, 27)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
+        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(85, 28)
         Me.NumericUpDown1.TabIndex = 7
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {150, 0, 0, 0})
         '
         'Button1
         '
