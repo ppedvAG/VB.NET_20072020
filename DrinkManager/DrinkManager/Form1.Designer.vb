@@ -166,9 +166,9 @@ Partial Class Form1
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(449, 371)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(285, 24)
+        Me.Label6.Size = New System.Drawing.Size(265, 24)
         Me.Label6.TabIndex = 12
-        Me.Label6.Text = "Es wurde bereits 12x Nachgefüllt"
+        Me.Label6.Text = "Es wurde noch nie nachgefüllt"
         '
         'PictureBox1
         '
@@ -194,7 +194,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BierToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(746, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(746, 30)
         Me.MenuStrip1.TabIndex = 15
         Me.MenuStrip1.Text = "MenuStrip1"
         '

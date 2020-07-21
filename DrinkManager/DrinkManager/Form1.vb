@@ -20,8 +20,32 @@ Public Class Form1
         Label4.Text = $"Füllstand: {vbNewLine}{meinDrink.Füllstand} ml"
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        meinDrink.SchluckNehmen(NumericUpDown1.Value)
-        ShowMyDrink()
+    Private Sub SchluckNehmenButton_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        If meinDrink Is Nothing Then
+            MessageBox.Show("Bitte erst Drink neu erstellen oder laden")
+        Else
+            meinDrink.SchluckNehmen(NumericUpDown1.Value)
+            ShowMyDrink()
+        End If
+    End Sub
+
+    Dim nachfüllZähler As Integer = 0
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        If meinDrink Is Nothing Then
+            'MessageBox.Show("Bitte erst Drink neu" & vbNewLine & " erstellen oder laden")
+            MessageBox.Show($"Bitte erst Drink neu {vbNewLine} erstellen oder laden")
+        Else
+            meinDrink.Nachfüllen()
+            ShowMyDrink()
+            nachfüllZähler += 1
+            If nachfüllZähler = 1 Then
+                Label6.Text = $"Es wurde zu ersten mal nachgefüllt"
+            Else
+                Label6.Text = $"Es wurde {nachfüllZähler} mal nachgefüllt"
+            End If
+        End If
+
     End Sub
 End Class
