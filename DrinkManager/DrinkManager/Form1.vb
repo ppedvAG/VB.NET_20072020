@@ -1,4 +1,5 @@
-﻿Imports HalloKlassen
+﻿Imports System.IO
+Imports HalloKlassen
 Imports SpreadsheetLight
 
 Public Class Form1
@@ -53,8 +54,8 @@ Public Class Form1
     Private Sub ExcelExportToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExcelExportToolStripMenuItem.Click
         Dim sl As New SLDocument("Bier.xlsx")
         meinDrink.Behälter = sl.GetCellValueAsString("A2")
-        meinDrink.FüllMenge = sl.GetCellValueAsInt32("A3")
-        'meinDrink.Füllstand = sl.GetCellValueAsInt32("A4")
+        meinDrink.FüllMenge = Integer.Parse(sl.GetCellValueAsString("A3"))
+        nachfüllZähler = sl.GetCellValueAsInt32("A4")
         ShowMyDrink()
 
 
@@ -63,11 +64,39 @@ Public Class Form1
     Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem3.Click
         Dim sl As New SLDocument()
         sl.SetCellValue("A1", "Bier!!")
-        sl.SetCellValue("A2", meinDrink.Behälter)
-        sl.SetCellValue("A3", meinDrink.FüllMenge)
-        sl.SetCellValue("A4", meinDrink.Füllstand)
+        sl.SetCellValue("A2", TextBox1.Text)
+        sl.SetCellValue("A3", TextBox2.Text)
+        sl.SetCellValue("A4", nachfüllZähler)
 
         sl.SaveAs("Bier.xlsx")
         Process.Start("Bier.xlsx")
+    End Sub
+
+    Private Sub SpeichernToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernToolStripMenuItem.Click
+
+        Dim sw As New StreamWriter("drink.txt")
+        sw.WriteLine(TextBox1.Text)
+        sw.WriteLine(TextBox2.Text)
+        sw.WriteLine(nachfüllZähler)
+        sw.Close()
+
+        'Process.Start("drink.txt")
+    End Sub
+
+    Private Sub LadenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LadenToolStripMenuItem.Click
+
+        'wenn meinDrink noch nicht erstellt wurde, erstelle wir ihn direkt
+        If meinDrink Is Nothing Then
+            meinDrink = New Drink()
+            meinDrink.Nachfüllen()
+        End If
+
+        Dim sr As New StreamReader("drink.txt")
+        meinDrink.Behälter = sr.ReadLine()
+        meinDrink.FüllMenge = Integer.Parse(sr.ReadLine())
+        nachfüllZähler = Integer.Parse(sr.ReadLine())
+        sr.Close()
+        ShowMyDrink()
+
     End Sub
 End Class
