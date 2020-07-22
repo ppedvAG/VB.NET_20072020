@@ -26,7 +26,10 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.FlowLayoutPanel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -72,11 +75,36 @@ Partial Class Form1
         Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
         Me.FlowLayoutPanel1.Controls.Add(Me.Button2)
         Me.FlowLayoutPanel1.Controls.Add(Me.Button3)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button4)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button5)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Button6)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(964, 36)
         Me.FlowLayoutPanel1.TabIndex = 1
+        '
+        'Button4
+        '
+        Me.Button4.AutoSize = True
+        Me.Button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button4.Location = New System.Drawing.Point(323, 3)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(104, 30)
+        Me.Button4.TabIndex = 1
+        Me.Button4.Text = "XML Export..."
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.AutoSize = True
+        Me.Button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button5.Location = New System.Drawing.Point(433, 3)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(106, 30)
+        Me.Button5.TabIndex = 2
+        Me.Button5.Text = "XML Import..."
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -88,6 +116,17 @@ Partial Class Form1
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.Size = New System.Drawing.Size(964, 488)
         Me.DataGridView1.TabIndex = 2
+        '
+        'Button6
+        '
+        Me.Button6.AutoSize = True
+        Me.Button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button6.Location = New System.Drawing.Point(545, 3)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(110, 30)
+        Me.Button6.TabIndex = 3
+        Me.Button6.Text = "JSON Export..."
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -114,4 +153,7 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
 End Class

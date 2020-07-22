@@ -1,6 +1,8 @@
 ﻿
 Imports System.IO
+Imports System.Xml.Serialization
 Imports DrinkModel
+Imports Newtonsoft.Json
 
 Public Class Form1
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -49,5 +51,50 @@ Public Class Form1
             sr.Close() 'Die Datei können wir schließen
             DataGridView1.DataSource = liste 'die temporäre Liste in der Oberfläche anzeigen
         End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim dlg As New SaveFileDialog
+        dlg.Title = "Wo soll das Gesöff hin?"
+        dlg.Filter = "Getränkedatei|*.xml"
+
+        If dlg.ShowDialog() = DialogResult.OK Then
+            Dim sw As New StreamWriter(dlg.FileName)
+
+            Dim serial As New XmlSerializer(GetType(List(Of Bier)))
+            serial.Serialize(sw, CType(DataGridView1.DataSource, List(Of Getränk)).OfType(Of Bier).ToList())
+            sw.Close()
+        End If
+
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Dim dlg As New OpenFileDialog
+        dlg.Title = "Wo kommt das Gesöff her?"
+        dlg.Filter = "Getränkedatei|*.xml"
+
+        If dlg.ShowDialog() = DialogResult.OK Then
+            Dim sr As New StreamReader(dlg.FileName)
+
+            Dim serial As New XmlSerializer(GetType(List(Of Bier)))
+            DataGridView1.DataSource = serial.Deserialize(sr)
+            sr.Close()
+        End If
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim dlg As New SaveFileDialog
+        dlg.Title = "Wo soll das Gesöff hin?"
+        dlg.Filter = "Getränkedatei|*.json"
+
+        If dlg.ShowDialog() = DialogResult.OK Then
+
+            Dim sw As New StreamWriter(dlg.FileName)
+
+            sw.Write(JsonConvert.SerializeObject(DataGridView1.DataSource))
+            sw.Close()
+        End If
+
     End Sub
 End Class
