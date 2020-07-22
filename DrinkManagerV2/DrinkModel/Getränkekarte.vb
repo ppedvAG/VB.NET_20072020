@@ -1,6 +1,31 @@
 ﻿Public Class Getränkekarte
 
 
+    Function GetAll() As List(Of Getränk)
+
+        Return GetKaffees().Cast(Of Getränk).Union(GetBiere()).ToList()
+
+    End Function
+
+    Function GetKaffees() As List(Of Kaffee)
+        Dim liste As New List(Of Kaffee)
+
+        Dim jack = New Kaffee()
+        jack.CO2 = False
+        jack.Kcal = 12
+        jack.Hersteller = "Jackobs"
+        jack.Röstung = "Kaffee"
+        liste.Add(jack)
+
+        Dim lav = New Kaffee()
+        lav.Kcal = 18
+        lav.Hersteller = "Lavazza"
+        lav.Röstung = "Espresso"
+        liste.Add(lav)
+
+        Return liste
+    End Function
+
     Function GetBiere() As List(Of Bier)
 
         Dim liste As New List(Of Bier)

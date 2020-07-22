@@ -51,6 +51,8 @@ Partial Class Form1
         Me.WeldePictureBox = New System.Windows.Forms.PictureBox()
         Me.RothausPictureBox = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GetränkteComboBox = New System.Windows.Forms.ComboBox()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -58,6 +60,7 @@ Partial Class Form1
         CType(Me.WeldePictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RothausPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -71,14 +74,14 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(48, 69)
+        Me.TextBox1.Location = New System.Drawing.Point(48, 66)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(200, 28)
         Me.TextBox1.TabIndex = 1
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(48, 162)
+        Me.TextBox2.Location = New System.Drawing.Point(48, 126)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(200, 28)
         Me.TextBox2.TabIndex = 3
@@ -86,7 +89,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(44, 136)
+        Me.Label2.Location = New System.Drawing.Point(44, 100)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(182, 24)
         Me.Label2.TabIndex = 2
@@ -95,18 +98,19 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(44, 209)
+        Me.Label3.Location = New System.Drawing.Point(51, 163)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(54, 24)
+        Me.Label3.Size = New System.Drawing.Size(136, 24)
         Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Inhalt"
+        Me.Label3.Text = "Inhalt (Getränk)"
         '
         'ComboBox1
         '
+        Me.ComboBox1.BackColor = System.Drawing.Color.Moccasin
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(48, 236)
+        Me.ComboBox1.Location = New System.Drawing.Point(18, 32)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(200, 30)
+        Me.ComboBox1.Size = New System.Drawing.Size(306, 30)
         Me.ComboBox1.TabIndex = 5
         '
         'Label4
@@ -114,7 +118,7 @@ Partial Class Form1
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(290, 53)
+        Me.Label4.Location = New System.Drawing.Point(412, 53)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(214, 92)
         Me.Label4.TabIndex = 6
@@ -145,7 +149,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.NumericUpDown1)
-        Me.GroupBox1.Location = New System.Drawing.Point(307, 203)
+        Me.GroupBox1.Location = New System.Drawing.Point(429, 203)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(209, 100)
         Me.GroupBox1.TabIndex = 9
@@ -163,7 +167,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(435, 321)
+        Me.Button2.Location = New System.Drawing.Point(557, 321)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(299, 47)
         Me.Button2.TabIndex = 11
@@ -173,7 +177,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(449, 371)
+        Me.Label6.Location = New System.Drawing.Point(571, 371)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(265, 24)
         Me.Label6.TabIndex = 12
@@ -181,7 +185,7 @@ Partial Class Form1
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(298, 149)
+        Me.ProgressBar1.Location = New System.Drawing.Point(420, 149)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(218, 38)
         Me.ProgressBar1.TabIndex = 14
@@ -193,7 +197,7 @@ Partial Class Form1
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BierToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(746, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(886, 30)
         Me.MenuStrip1.TabIndex = 15
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -201,7 +205,7 @@ Partial Class Form1
         '
         Me.BierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NeuToolStripMenuItem, Me.ToolStripMenuItem1, Me.LadenToolStripMenuItem, Me.SpeichernToolStripMenuItem, Me.ToolStripMenuItem3, Me.ExcelExportToolStripMenuItem, Me.ToolStripMenuItem2, Me.BeendenToolStripMenuItem})
         Me.BierToolStripMenuItem.Name = "BierToolStripMenuItem"
-        Me.BierToolStripMenuItem.Size = New System.Drawing.Size(58, 24)
+        Me.BierToolStripMenuItem.Size = New System.Drawing.Size(58, 26)
         Me.BierToolStripMenuItem.Text = "Drink"
         '
         'NeuToolStripMenuItem
@@ -253,7 +257,7 @@ Partial Class Form1
         'HoepfnerPictureBox
         '
         Me.HoepfnerPictureBox.Image = Global.DrinkManager.My.Resources.Resources.hoepfner_pilsner_05_1_
-        Me.HoepfnerPictureBox.Location = New System.Drawing.Point(220, 299)
+        Me.HoepfnerPictureBox.Location = New System.Drawing.Point(226, 71)
         Me.HoepfnerPictureBox.Name = "HoepfnerPictureBox"
         Me.HoepfnerPictureBox.Size = New System.Drawing.Size(98, 107)
         Me.HoepfnerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -263,7 +267,7 @@ Partial Class Form1
         'WeldePictureBox
         '
         Me.WeldePictureBox.Image = CType(resources.GetObject("WeldePictureBox.Image"), System.Drawing.Image)
-        Me.WeldePictureBox.Location = New System.Drawing.Point(116, 299)
+        Me.WeldePictureBox.Location = New System.Drawing.Point(122, 71)
         Me.WeldePictureBox.Name = "WeldePictureBox"
         Me.WeldePictureBox.Size = New System.Drawing.Size(98, 107)
         Me.WeldePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -273,7 +277,7 @@ Partial Class Form1
         'RothausPictureBox
         '
         Me.RothausPictureBox.Image = Global.DrinkManager.My.Resources.Resources.Rothaus_Tannezaepfle_Alkoholfrei_1_
-        Me.RothausPictureBox.Location = New System.Drawing.Point(12, 299)
+        Me.RothausPictureBox.Location = New System.Drawing.Point(18, 71)
         Me.RothausPictureBox.Name = "RothausPictureBox"
         Me.RothausPictureBox.Size = New System.Drawing.Size(98, 107)
         Me.RothausPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -283,29 +287,48 @@ Partial Class Form1
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.DrinkManager.My.Resources.Resources.iu_1_
-        Me.PictureBox1.Location = New System.Drawing.Point(554, 53)
+        Me.PictureBox1.Location = New System.Drawing.Point(676, 53)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(180, 180)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 13
         Me.PictureBox1.TabStop = False
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.HoepfnerPictureBox)
+        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.WeldePictureBox)
+        Me.GroupBox2.Controls.Add(Me.RothausPictureBox)
+        Me.GroupBox2.Location = New System.Drawing.Point(37, 251)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(348, 202)
+        Me.GroupBox2.TabIndex = 19
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Bier"
+        '
+        'GetränkteComboBox
+        '
+        Me.GetränkteComboBox.FormattingEnabled = True
+        Me.GetränkteComboBox.Location = New System.Drawing.Point(48, 190)
+        Me.GetränkteComboBox.Name = "GetränkteComboBox"
+        Me.GetränkteComboBox.Size = New System.Drawing.Size(306, 30)
+        Me.GetränkteComboBox.TabIndex = 19
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(746, 408)
-        Me.Controls.Add(Me.HoepfnerPictureBox)
-        Me.Controls.Add(Me.WeldePictureBox)
-        Me.Controls.Add(Me.RothausPictureBox)
+        Me.ClientSize = New System.Drawing.Size(886, 465)
+        Me.Controls.Add(Me.GetränkteComboBox)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox1)
@@ -327,6 +350,7 @@ Partial Class Form1
         CType(Me.WeldePictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RothausPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -360,4 +384,6 @@ Partial Class Form1
     Friend WithEvents RothausPictureBox As PictureBox
     Friend WithEvents WeldePictureBox As PictureBox
     Friend WithEvents HoepfnerPictureBox As PictureBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GetränkteComboBox As ComboBox
 End Class

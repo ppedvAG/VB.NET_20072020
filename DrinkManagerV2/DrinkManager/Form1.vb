@@ -16,6 +16,9 @@ Public Class Form1
         Dim gk As New Getränkekarte()
         ComboBox1.DataSource = gk.GetBiere()
         'ComboBox1.DisplayMember = "Sorte"
+
+        GetränkteComboBox.DataSource = gk.GetAll()
+        GetränkteComboBox.DisplayMember = "Hersteller"
     End Sub
 
     Private Sub NeuToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NeuToolStripMenuItem.Click
