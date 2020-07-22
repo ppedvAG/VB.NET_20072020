@@ -23,26 +23,24 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.button1 = New DVDScreensaver.MeinButton()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.LimeGreen
-        Me.Button1.Font = New System.Drawing.Font("Gill Sans Ultra Bold", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.DarkViolet
-        Me.Button1.Location = New System.Drawing.Point(134, 78)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(428, 88)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Klick mich"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'Timer1
         '
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1
+        '
+        'button1
+        '
+        Me.button1.BackColor = System.Drawing.Color.Orange
+        Me.button1.Location = New System.Drawing.Point(152, 172)
+        Me.button1.Name = "button1"
+        Me.button1.Size = New System.Drawing.Size(221, 59)
+        Me.button1.TabIndex = 1
+        Me.button1.Text = "MeinButton1"
+        Me.button1.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -50,13 +48,12 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Aqua
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.button1)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents Button1 As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents button1 As MeinButton
 End Class

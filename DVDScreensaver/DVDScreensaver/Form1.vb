@@ -1,18 +1,26 @@
 ﻿Public Class Form1
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles button1.Click
         MessageBox.Show("Du hast mich geklickt mit dem Speed:" & speedX)
         MachButtonBunt()
     End Sub
 
-    Private Sub Button1_MouseEnter(sender As Object, e As EventArgs) Handles Button1.MouseEnter
-        Button1.BackColor = Color.OrangeRed
+    Private Sub Button1_MouseEnter(sender As Object, e As EventArgs) Handles button1.MouseEnter
+        button1.BackColor = Color.OrangeRed
         'Button1.Left = Button1.Left + 110
         'Button1.Left += 110
     End Sub
 
-    Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles Button1.MouseLeave
-        Button1.BackColor = Color.Chartreuse
+    Private Sub Button1_MouseLeave(sender As Object, e As EventArgs) Handles button1.MouseLeave
+        button1.BackColor = Color.Chartreuse
     End Sub
 
     Sub MachButtonBunt()
@@ -53,7 +61,7 @@
         'MessageBox.Show("Viel Spass am " & Date.Now.DayOfWeek.ToString())
 
         'Dim tag As Date = Date.Now.AddDays(3)
-        Dim tag As Date = New Date(2020, 7, 26)
+        Dim tag As Date = New Date(2020, 7, 25)
 
         Select Case tag.DayOfWeek
             Case DayOfWeek.Monday
